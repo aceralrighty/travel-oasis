@@ -1,15 +1,14 @@
 package org.example;
 
 public enum Nationality {
-    ;
-    private String nationalityString;
-    ISR("Israeli");
-    TUR("Turkish");
-    GER("German");
-    IRH("Irish");
+    ISR("Israeli"),
+    TUR("Turkish"),
+    GER("German"),
+    IRH("Irish"),
     SWD("Swede");
+    private String nationalityString;
 
-    public void setNationalityString(String nationalityString) {
+    Nationality(String nationalityString){
         this.nationalityString = nationalityString;
     }
 

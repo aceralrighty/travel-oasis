@@ -1,6 +1,7 @@
 package org.example;
 
 import java.io.Serializable;
+import java.util.Arrays;
 
 public abstract class Person implements Serializable {
     protected String firstName;
@@ -30,10 +31,10 @@ public abstract class Person implements Serializable {
     public void setNationality(Nationality nationality) {
         this.nationality = nationality;
     }
-    Trip trip;
+
     @Override
     public String toString(){
         return "Guests Information:\nName: " + getFirstName() + " "+ getLastName()+
-                "\nNationality: " + getNationality().getNationalityString();
+                "\nNationality: " + Arrays.toString(Nationality.values());
     }
 }

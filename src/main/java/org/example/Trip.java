@@ -12,7 +12,7 @@ import java.util.Date;
 
 public class Trip implements Comparable<Trip>, Serializable {
     private Agent agent = new Agent();
-    private ArrayList<Integer> guests;
+    private Guest[] guests;
     private LocalDate endDate;
     private LocalDate startDate;
     private double cost;
@@ -25,18 +25,14 @@ public class Trip implements Comparable<Trip>, Serializable {
         this.agent = agent;
     }
 
-    public ArrayList<Integer> getGuests() {
+    public Guest[] getGuests() {
         return guests;
     }
 
-    public void setGuests(ArrayList<Integer> guests) {
-        if (guests.isEmpty()) {
-            System.out.println("You need to have at least 1 guest to be booked for a trip");
-            guests.equals(1);
-        } else {
+    public void setGuests(Guest[] guests) {
             this.guests = guests;
 
-        }
+
     }
 
     public LocalDate getEndDate() {
@@ -83,7 +79,9 @@ public class Trip implements Comparable<Trip>, Serializable {
     public String toString() {
         DecimalFormat df = new DecimalFormat("$####.##");
         DateTimeFormatter dateTimeFormatter = DateTimeFormatter.ofPattern("MM-dd-yyyy");
-        return "\nTrip Cost: " + df.format(getCost()) +
+        Agent agent1 = null;
+        Guest guest1 = null;
+        return agent1.toString() + guest1.toString() + "\nTrip Cost: " + df.format(getCost()) +
                 "\n Trip Start: " + dateTimeFormatter.format(getStartDate()) +
                 "\n Trip End: " + dateTimeFormatter.format(getEndDate());
     }
